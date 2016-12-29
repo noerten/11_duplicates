@@ -6,8 +6,6 @@ def get_all_files(user_folder):
     all_files = defaultdict(list)
     for path, subdirs, files in os.walk(user_folder):
         for name in files:
-            if not name.endswith('.py'):
-                continue
             path_with_name = os.path.join(path, name)
             name_size = name, os.path.getsize(path_with_name)
             all_files[name_size].append(path_with_name)
